@@ -205,7 +205,7 @@ nav li a:hover .navPointer {
 
 body {
     /* background: url("//a.thumbs.redditmedia.com/MRc8REa71ql10Yn42e6A4-MY9mCta_k8q4WkGbIfW54.png"); */
-background: url(/public/images/earthbound-pattern.png);
+background: url(/public/images/earthbound-stars.png);
     /* height: 144px; */
     -webkit-animation: scroll 100s linear infinite;
     animation: scroll 100s linear infinite;
