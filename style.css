@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Altima";
-  src: url(/public/fonts/Altima.ttf);
+  src: url(fonts/Altima.ttf);
 }
 
 .App {
@@ -172,9 +172,7 @@ nav li a:hover .navPointer {
   transition-delay: 0s, 7s;
   width: 300px;
   height: 200px;
-  
-
-  background-image: url("//a.thumbs.redditmedia.com/MRc8REa71ql10Yn42e6A4-MY9mCta_k8q4WkGbIfW54.png");
+  background-image: url(images/earthbound-pattern.png);
   /* height: 144px; */
   -webkit-animation: scroll 200s linear infinite;
   animation: scroll 200s linear infinite;
