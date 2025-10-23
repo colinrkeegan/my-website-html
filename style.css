@@ -90,6 +90,10 @@ nav li a {
     1.5px 1.5px 0 #000;
 }
 
+nav ul li a {
+  text-decoration: none;
+}
+
 .navLink:hover {
   text-shadow: -1.5px -1.5px 0 #f00000, 1.5px -1.5px 0 #f00000, -1.5px 1.5px 0 #f00000,
     1.5px 1.5px 0 #f00000;
@@ -97,18 +101,18 @@ nav li a {
 
 .navPointer {
   /* TODO PUT THIS BACK */
-  /* opacity: 0; */
+  opacity: 0;
   width: 30px;
 }
 
 nav li a:hover .navPointer {
   opacity: 100;
-  color: red;
+  color: rgb(255, 0, 0);
 }
 
 #construct-content:hover .navPointer {
-  opacity: 100;
-  color: red;
+  /* opacity: 100; */
+  color: rgb(255, 0, 0);
 }
 
 /* nav li a:active .navPointer {
@@ -150,7 +154,7 @@ nav li a:hover .navPointer {
   /* margin: 0px; */
   /* padding: 0px; */
   /* TODO DELETE? */
-  height: 15px;
+  /* height: 15px; */
 }
 
 #construct-wrapper {
@@ -167,7 +171,8 @@ nav li a:hover .navPointer {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #11b079;
+  /* background-color: #11b079; */
+  background-color: #000000;
   transition: width 10s, height 10s;
   transition-delay: 0s, 7s;
   width: 300px;
@@ -187,8 +192,17 @@ nav li a:hover .navPointer {
   font-size: 30px;
   padding: 5px;
   color: #ffffff;
-  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000,
-    1.5px 1.5px 0 #000;
+  /* text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000,
+    1.5px 1.5px 0 #000; */
+}
+
+#construct-content a {
+  font-family: "Altima";
+  font-size: 30px;
+  padding: 5px;
+  color: #ffffff;
+  /* text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000,
+    1.5px 1.5px 0 #000; */
 }
 
 @keyframes scroll {
