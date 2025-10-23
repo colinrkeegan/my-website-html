@@ -1,0 +1,240 @@
+@font-face {
+  font-family: "Altima";
+  src: url(/public/fonts/Altima.ttf);
+}
+
+.App {
+  font-family: sans-serif;
+  /* text-align: center; */
+}
+
+html,
+body,
+.col1,
+.col2 {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+/* .col1,
+.col2 {
+  padding: 5px;
+} */
+
+.col-content {
+  padding: 5px 15px 15px 15px;
+}
+
+.col1 {
+  background-color: pink;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 30vw;
+}
+
+.col2 {
+  /* background-color: silver; */
+  background-image: url(fonts/Bumpty.png);
+  margin-left: 30vw;
+  overflow: auto;
+  width: 70vw;
+}
+
+nav {
+  /* position: fixed; */
+  font-family: "Altima";
+  font-size: 30px;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #5314d2;
+  color: #ffffff;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  /* border-style: ridge; */
+}
+
+nav li {
+  /* This makes the text stuck on the top */
+  /* float: left; */
+  display: block;
+  text-align: center;
+}
+
+nav li a {
+  margin-left: -40px;
+}
+
+.navLink {
+  display: inline-block;
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 4px;
+  text-decoration: none;
+
+  /* background-color: white; */
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000,
+    1.5px 1.5px 0 #000;
+}
+
+.navLink:hover {
+  text-shadow: -1.5px -1.5px 0 #f00000, 1.5px -1.5px 0 #f00000, -1.5px 1.5px 0 #f00000,
+    1.5px 1.5px 0 #f00000;
+}
+
+.navPointer {
+  /* TODO PUT THIS BACK */
+  /* opacity: 0; */
+  width: 30px;
+}
+
+nav li a:hover .navPointer {
+  opacity: 100;
+  color: red;
+}
+
+#construct-content:hover .navPointer {
+  opacity: 100;
+  color: red;
+}
+
+/* nav li a:active .navPointer {
+  opacity: 100;
+  color: black;
+} */
+
+@keyframes pointerBounce {
+  from {
+    transform: translateX(-7px);
+  }
+  to {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes pointerSpin {
+  0%,
+  42%,
+  58% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(360deg);
+  }
+}
+
+/* The element to apply the animation to */
+.navPointer {
+  animation: pointerBounce 0.5s cubic-bezier(0.5, 0, 1, 0.5) infinite alternate;
+  will-change: transform;
+}
+
+.navPointerWrapper {
+  animation: pointerSpin 7s infinite;
+  display: inline-block;
+  will-change: transform;
+  /* background-color: #f00000; */
+  /* margin: 0px; */
+  /* padding: 0px; */
+  /* TODO DELETE? */
+  height: 15px;
+}
+
+#construct-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  margin: auto;
+}
+
+#construct-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #11b079;
+  transition: width 10s, height 10s;
+  transition-delay: 0s, 7s;
+  width: 300px;
+  height: 200px;
+  
+
+  background: url("//a.thumbs.redditmedia.com/MRc8REa71ql10Yn42e6A4-MY9mCta_k8q4WkGbIfW54.png");
+  /* height: 144px; */
+  -webkit-animation: scroll 200s linear infinite;
+  animation: scroll 200s linear infinite;
+  -moz-animation: scroll 200s linear infinite;
+  -o-animation: scroll 200s linear infinite;
+  border: 5px solid rgb(162, 52, 84);
+  border-radius: 10px;
+}
+
+#construct-content span{
+  font-family: "Altima";
+  font-size: 30px;
+  padding: 5px;
+  color: #ffffff;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000,
+    1.5px 1.5px 0 #000;
+}
+
+@keyframes scroll {
+    from {
+        background-position: 0 -0
+    }
+
+    to {
+        background-position: 3840px 3840px;
+    }
+}
+
+body {
+    /* background: url("//a.thumbs.redditmedia.com/MRc8REa71ql10Yn42e6A4-MY9mCta_k8q4WkGbIfW54.png"); */
+background: url(/public/images/earthbound-stars.png);
+    /* height: 144px; */
+    -webkit-animation: scroll 100s linear infinite;
+    animation: scroll 100s linear infinite;
+    -moz-animation: scroll 100s linear infinite;
+    -o-animation: scroll 100s linear infinite
+}
+
+@keyframes introAnim {
+  0% {
+    width: 300px;
+    height: 200px
+  }
+  25%, 55% {
+    width: 90vw;
+  }
+  100% {
+    width: 90vw;
+    height: 90vh;
+  }
+}
+
+#construct-content:hover {
+    /* -webkit-transition: introAnim 1s ease-in-out;
+    -moz-transition: introAnim 1s ease-in-out;
+    -o-transition: introAnim 1s ease-in-out; */
+    
+    /* animation: introAnim 20s ease-in-out; */
+    /* animation-fill-mode: both; */
+    /* animation-delay: 10s; */
+    width: 90vw;
+    height: 90vh;
+}
