@@ -175,6 +175,8 @@ nav li a:hover .navPointer {
   background-color: #000000;
   transition: width 10s, height 10s;
   transition-delay: 0s, 7s;
+  min-width: 300px;
+  min-height: 200px;
   width: 300px;
   height: 200px;
   background-image: url(images/earthbound-pattern.png);
@@ -219,10 +221,10 @@ body {
     /* background: url("//a.thumbs.redditmedia.com/MRc8REa71ql10Yn42e6A4-MY9mCta_k8q4WkGbIfW54.png"); */
     background-image: url(images/earthbound-stars.png);
     /* height: 144px; */
-    -webkit-animation: scroll 100s linear infinite;
-    animation: scroll 100s linear infinite;
-    -moz-animation: scroll 100s linear infinite;
-    -o-animation: scroll 100s linear infinite
+    -webkit-animation: scroll 150s linear infinite;
+    animation: scroll 150s linear infinite;
+    -moz-animation: scroll 150s linear infinite;
+    -o-animation: scroll 150s linear infinite
 }
 
 @keyframes introAnim {
@@ -248,5 +250,6 @@ body {
     /* animation-fill-mode: both; */
     /* animation-delay: 10s; */
     width: 90vw;
-    height: 90vh;
+    /* TODO: Un-deleete if you want it to grow vertically */
+    /* height: 90vh; */
 }
