@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colin's Site Coming Soon...</title>
+    <meta name="author" content="Colin Keegan" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+      #CoordsSpan{
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+        <div class="row">
+          <div class="col1">
+            <!-- <div id="nav-placeholder"></div> -->
+             BUH
+            <div class="col-content">Test1</div>
+          </div>
+          <div class="col2">
+            <div class="col-content">
+              <section>
+                <button id="ResetButton">Reset</button>
+                <button id="TestButton">Print Coordinates</button>
+                <div id="CoordsDiv"><span id="CoordsSpan">Coordinates Here</span></div>
+                <div class="mydiv">
+                  <div class="mydivheader">
+                    <div class="ring-img-wrapper">
+                      <img src="https://cdn.shopify.com/s/files/1/0718/6222/3034/files/blue_ring.png?v=1759291960" style="height:70px; width:50px;"></img>
+                    </div>
+                  </div>
+                </div>
+                <div class="mydiv">
+                  <div class="mydivheader">
+                    Click to Drag
+                  </div>
+                  <div id="nav-wrapper">
+                    <div id="nav-placeholder"></div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<script>
+        var offset = 5;
+        var mydivs = document.getElementsByClassName("mydiv");
+        for (var i = 0; i < mydivs.length; i++) {
+          dragElement(mydivs[i]);
+          mydivs[i].style.left = offset + "px";
+          offset = offset + mydivs[i].offsetWidth + 5;
+        }
+  
+        function dragElement(elmnt) {
+          var pos1 = 0,
+            pos2 = 0,
+            pos3 = 0,
+            pos4 = 0;
+          if (elmnt.getElementsByClassName("mydivheader")[0]) {
+  
+            elmnt.getElementsByClassName("mydivheader")[0].onmousedown =
+              dragMouseDown;
+          } else {
+  
+            elmnt.onmousedown = dragMouseDown;
+          }
+  
+          function dragMouseDown(e) {
+            console.log("Obama is ");
+            e = e || window.event;
+            e.preventDefault();
+         
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+  
+            document.onmousemove = elementDrag;
+          }
+  
+          function elementDrag(e) {
+            console.log("Obama is 2");
+            e = e || window.event;
+            e.preventDefault();
+           
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+    
+            elmnt.style.top = elmnt.offsetTop - pos2 + "px";
+            elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
+          }
+  
+          function closeDragElement() {
+  
+            document.onmouseup = null;
+            document.onmousemove = null;
+          }
+        }
+  
+  document.addEventListener("DOMContentLoaded", function () {
+          const resetButton = document.getElementById("ResetButton");
+          var mydivs = document.getElementsByClassName("mydiv");
+          const testButton = document.getElementById("TestButton");
+          const coordsSpan = document.getElementById("CoordsSpan");
+  
+         const offsetAmount = 160;
+  
+          for (var i = 0; i < mydivs.length; i++) {
+            mydivs[i].style.top = resetButton.offsetTop + 50 + "px";
+            mydivs[i].style.left =
+              resetButton.offsetLeft + i * offsetAmount + "px";
+          }
+  
+          resetButton.addEventListener("click", function () {
+            mydivs[0].style.top = resetButton.offsetTop + 50 + "px";
+            mydivs[0].style.left = resetButton.offsetLeft - 0 + "px";
+  
+            for (var i = 1; i < mydivs.length; i++) {
+              mydivs[i].style.top = resetButton.offsetTop + 50 + "px";
+              mydivs[i].style.left =
+                resetButton.offsetLeft + i * offsetAmount + "px";
+            }
+          });
+        
+          TestButton.addEventListener("click", function () {
+  coordsSpan.innerHTML =
+  "Top1 =" + mydivs[0].offsetTop + "px Left1 = " + mydivs[0].offsetLeft +
+              "px" +
+              "&nbsp|&nbsp" +
+              "Top2 =" +
+              mydivs[1].offsetTop +
+              "px Left2 = " +
+              mydivs[1].offsetLeft +
+              "px" +
+              "&nbsp|&nbsp";
+          });
+        });
+      </script>
+
+  <script>
+$(document).ready(function(){
+    $("#nav-placeholder").load("nav.html");
+});
+  </script>
+  </body>
+</html>
