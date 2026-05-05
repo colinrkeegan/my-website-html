@@ -24,20 +24,30 @@
           1.5px 0px 0 #000, -1.5px 0px 0 #000;
       }
 
-      .navPointerWrapper {
-        height: 10px;
+      nav{
+        margin: auto;
       }
     </style>
   </head>
   <body>
     <div id="construct-wrapper">
       <div id="construct-content">
-        <div class="navPointerWrapper">
-          <img src="images/ff-pointer.png" class="navPointer" style="opacity: 100;"/>
-        </div>
-        <span>Coming Soon......</span>
+        <nav>
+          <ul>
+            <li>
+              <a href="index.html">
+                <div class="navPointerWrapper">
+                  <img src="images/ff-pointer.png" class="navPointer" />
+                </div>
+                <span class="navLink">Home</span>
+              </a>
+            </li>
+            <li>
+                <span class="navLink">Hello! &lt;3</span>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
-    <!-- <script type="module" src="/src/main.tsx"></script> -->
   </body>
 </html>
