@@ -3,41 +3,266 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Colin's Site Coming Soon...</title>
+    <title>Colin's Website!</title>
     <meta name="author" content="Colin Keegan" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="shortcut icon" href="images/favicon.ico" />
-    <style>
-
-      #construct-content span{
-        padding: 14px 9px;
-        text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000,
-          1.5px 1.5px 0 #000, 
-          0px 1.5px 0 #000, 0px -1.5px 0 #000,
-          1.5px 0px 0 #000, -1.5px 0px 0 #000;
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+     <style>
+      .mydiv {
+        display:none;
+        background-image: url(images/ffta_checkered_bg.png);
+        border: 0px;
+      }
+      .ring-img-wrapper{
+        background-color: rgba(24, 56, 160, 0.6);
       }
 
-      #construct-content a {
-        text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000,
-          1.5px 1.5px 0 #000, 
-          0px 1.5px 0 #000, 0px -1.5px 0 #000,
-          1.5px 0px 0 #000, -1.5px 0px 0 #000;
+      .website .navPointerWrapper {
+        margin-left: -40px;
       }
-
-      .navPointerWrapper {
-        height: 10px;
-      }
-    </style>
+     </style>
   </head>
   <body>
+    <!-- TODO TODO TODO TODO TODO -->
+    <!-- <header>
+      <button class="show-all-button" onclick="showAllPopups()">Show All</button>
+      <button class="hide-all-button" onclick="hideAllPopups()">Hide All</button>
+      <button class="reset-all-button" onclick="resetAllPopups()">Reset Positions</button>
+    </header> -->
     <div id="construct-wrapper">
+      <!-- <button id="ResetButton">Reset</button>
+      <button id="TestButton">Print Coordinates</button>
+      <div id="CoordsDiv"><span id="CoordsSpan">Coordinates Here</span></div> -->
       <div id="construct-content">
-        <div class="navPointerWrapper">
-          <img src="images/ff-pointer.png" class="navPointer" style="opacity: 100;"/>
-        </div>
-        <span>Coming Soon...... !</span>
+        <div id="nav-placeholder"></div>
       </div>
+      <div class="mydiv" id="websites-menu" style="width:250px;">
+          <div class="mydivheader">
+            <span>Websites</span>
+            <button class="x-button" onclick="hidePopup('websites-menu')">X</button>
+          </div>
+          <div id="construct-content-popup">
+            <div class="website">
+              <a href="websites.html#marisa">
+              <div>
+                <img class="popup-img" src="images/marisa_jewelry_website.png">
+              </div>
+              <div class="navPointerWrapper">
+                <img src="images/ff-pointer.png" class="navPointer" />
+              </div>
+              Marisa McCarthy Jewelry
+            </a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="mydiv" id="games-menu" style="width:300px;">
+          <div class="mydivheader">
+            <span>Games</span>
+            <button class="x-button" onclick="hidePopup('games-menu')">X</button>
+          </div>
+          <div id="construct-content-popup">
+            <div class="website">
+              <a href="https://crkeegan.itch.io/tower-siege">
+              <div>
+                <img class="popup-img" src="images/tower_siege_screencap.png">
+              </div>
+              <div class="navPointerWrapper">
+                <img src="images/ff-pointer.png" class="navPointer" />
+              </div>
+              Tower Siege
+            </a>
+            </div>
+          </div>
+        </div>
+
+
+         <div class="mydiv" id="photography-menu" style="width: 220px;">
+          <div class="mydivheader">
+            <span>Photos</span>
+            <button class="x-button" onclick="hidePopup('photography-menu')">X</button>
+          </div>
+            <div class="ring-img-wrapper">
+              <span>Coming Soon...</span>
+              <img src="images/tito_spectro.png" id="tito-pic"></img>
+            </div>
+        </div>
+        <div class="mydiv" id="music-menu" style="width: 255px;">
+          <div class="mydivheader">
+            <span>Music</span>
+            <button class="x-button" onclick="hidePopup('music-menu')">X</button>
+          </div>
+            <div class="ring-img-wrapper">
+              <span>Coming Soon...</span>
+              <img src="images/tito_spectro.png" id="tito-pic"></img>
+            </div>
+        </div>
+        <div class="mydiv" id="contact-menu">
+          <div class="mydivheader">
+            <span>Contact Me</span>
+            <button class="x-button" onclick="hidePopup('contact-menu')">X</button>
+          </div>
+            <div class="ring-img-wrapper" style="padding: 5px;">
+              <!-- <img src="https://cdn.shopify.com/s/files/1/0718/6222/3034/files/green_ring.png?v=1759292355" style="height:50px;"></img> -->
+              <span>email: colinrkeegan @ gmail . com</span>
+              <span>linkedin: linkedin . com/in/colin-keegan/</span>
+              <!-- <span></span> -->
+            </div>
+        </div>
     </div>
-    <!-- <script type="module" src="/src/main.tsx"></script> -->
+    <!-- <script type="module" src="/src/main.html"></script> -->
   </body>
+  
+  <script>
+    function hidePopup(id) {
+      document.getElementById(id).style.display = "none";
+    }
+  </script>
+  
+  <script>
+    function showMenu(event, menuType) {
+      event.preventDefault();
+      // alert("Function was called! The link will not be followed.");
+      var M = document.getElementById(menuType + "-menu");
+      M.style.display = "block";
+    }
+  </script>
+
+  <script>
+        var offset = 5;
+        var mydivs = document.getElementsByClassName("mydiv");
+        var navWrap = document.getElementById("construct-content");
+        var navWrapCoord = navWrap.offsetLeft;
+        for (var i = 0; i < mydivs.length; i++) {
+          dragElement(mydivs[i]);
+          mydivs[i].style.left = offset + "px";
+          offset = offset + mydivs[i].offsetWidth + 5;
+        }
+
+        // 0 = websites
+        // 1 = games
+        // 2 = photos
+        // 3 = music
+        // 4 = contact
+
+        mydivs[0].style.left = (navWrap.offsetLeft - 200) + "px";
+        mydivs[0].style.top = (navWrap.offsetTop - 150) + "px";
+
+        mydivs[1].style.left = (navWrap.offsetLeft + 260) + "px";
+        mydivs[1].style.top = (navWrap.offsetTop - 100) + "px";
+
+        mydivs[2].style.left = (navWrap.offsetLeft - 150) + "px";
+        mydivs[2].style.top = (navWrap.offsetTop + 139) + "px";
+
+        mydivs[3].style.left = (navWrap.offsetLeft + 260) + "px";
+        mydivs[3].style.top = (navWrap.offsetTop + 170) + "px";
+
+        mydivs[4].style.left = (navWrap.offsetLeft + 35) + "px";
+        mydivs[4].style.top = (navWrap.offsetTop + 265) + "px";
+
+        // mydivs[0].style.bottom = 300 + "px";
+  
+        function dragElement(elmnt) {
+          var pos1 = 0,
+            pos2 = 0,
+            pos3 = 0,
+            pos4 = 0;
+          if (elmnt.getElementsByClassName("mydivheader")[0]) {
+  
+            elmnt.getElementsByClassName("mydivheader")[0].onmousedown =
+              dragMouseDown;
+          } else {
+  
+            elmnt.onmousedown = dragMouseDown;
+          }
+  
+          function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+         
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+  
+            document.onmousemove = elementDrag;
+          }
+  
+          function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+           
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+    
+            elmnt.style.top = elmnt.offsetTop - pos2 + "px";
+            elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
+          }
+  
+          function closeDragElement() {
+  
+            document.onmouseup = null;
+            document.onmousemove = null;
+          }
+        }
+  
+  document.addEventListener("DOMContentLoaded", function () {
+          const resetButton = document.getElementById("ResetButton");
+          var mydivs = document.getElementsByClassName("mydiv");
+          const testButton = document.getElementById("TestButton");
+          const coordsSpan = document.getElementById("CoordsSpan");
+  
+         const offsetAmount = 160;
+  
+          for (var i = 0; i < mydivs.length; i++) {
+            mydivs[i].style.top = resetButton.offsetTop + 50 + "px";
+            mydivs[i].style.left =
+              resetButton.offsetLeft + i * offsetAmount + "px";
+          }
+  
+          resetButton.addEventListener("click", function () {
+            mydivs[0].style.top = resetButton.offsetTop + 50 + "px";
+            mydivs[0].style.left = resetButton.offsetLeft - 0 + "px";
+  
+            for (var i = 1; i < mydivs.length; i++) {
+              mydivs[i].style.top = resetButton.offsetTop + 50 + "px";
+              mydivs[i].style.left =
+                resetButton.offsetLeft + i * offsetAmount + "px";
+            }
+          });
+        
+          TestButton.addEventListener("click", function () {
+            coordsSpan.innerHTML =
+             "Top1 =" + mydivs[0].offsetTop + "px Left1 = " + mydivs[0].offsetLeft +
+              "px" +
+              "&nbsp|&nbsp" +
+              "Top2 =" +
+              mydivs[1].offsetTop +
+              "px Left2 = " +
+              mydivs[1].offsetLeft +
+              "px" +
+              "&nbsp|&nbsp" +
+              "Top3 =" +
+              mydivs[2].offsetTop +
+              "px Left3 = " +
+              mydivs[2].offsetLeft +
+              "px" +
+              "&nbsp|&nbsp" +
+              "Top4 =" +
+              mydivs[3].offsetTop +
+              "px Left4 = " +
+              mydivs[3].offsetLeft +
+              "px";
+          });
+        });
+      </script>
+
+  <script>
+      $(document).ready(function(){
+          $("#nav-placeholder").load("nav.html");
+      });
+  </script>
 </html>
