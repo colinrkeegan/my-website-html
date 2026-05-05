@@ -7,49 +7,66 @@
     <meta name="author" content="Colin Keegan" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="shortcut icon" href="images/favicon.ico" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <style>
-      #CoordsSpan{
-        color: white;
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+     <style>
+      .mydiv{
+        display:none;
+        background-image: url(images/ffta_checkered_bg.png);
       }
-    </style>
+      .mydivheader{
+        background-color: rgba(0, 0, 0, 0.85);
+      }
+      .ring-img-wrapper{
+        background-color: rgba(24, 56, 160, 0.6);
+      }
+     </style>
   </head>
   <body>
-    <div id="main">
-        <div class="row">
-          <div class="col1">
-            <!-- <div id="nav-placeholder"></div> -->
-             BUH
-            <div class="col-content">Test1</div>
-          </div>
-          <div class="col2">
-            <div class="col-content">
-              <section>
-                <button id="ResetButton">Reset</button>
-                <button id="TestButton">Print Coordinates</button>
-                <div id="CoordsDiv"><span id="CoordsSpan">Coordinates Here</span></div>
-                <div class="mydiv">
-                  <div class="mydivheader">
-                    <div class="ring-img-wrapper">
-                      <img src="https://cdn.shopify.com/s/files/1/0718/6222/3034/files/blue_ring.png?v=1759291960" style="height:70px; width:50px;"></img>
-                    </div>
-                  </div>
-                </div>
-                <div class="mydiv">
-                  <div class="mydivheader">
-                    Click to Drag
-                  </div>
-                  <div id="nav-wrapper">
-                    <div id="nav-placeholder"></div>
-                  </div>
-                </div>
-              </section>
-            </div>
-          </div>
-        </div>
+    <div id="construct-wrapper">
+      <!-- <button id="ResetButton">Reset</button>
+      <button id="TestButton">Print Coordinates</button>
+      <div id="CoordsDiv"><span id="CoordsSpan">Coordinates Here</span></div> -->
+      <div id="construct-content">
+        <div id="nav-placeholder"></div>
       </div>
+      <div class="mydiv" id="websites-menu">
+          <div class="mydivheader">WEBSITES</div>
+          <div class="ring-img-wrapper">
+              <img src="https://cdn.shopify.com/s/files/1/0718/6222/3034/files/blue_ring.png?v=1759291960" style="height:70px; width:50px;"></img>
+            </div>
+        </div>
+        <div class="mydiv" id="games-menu">
+          <div class="mydivheader"> GAMES </div>
+            <div class="ring-img-wrapper">
+              <img src="https://cdn.shopify.com/s/files/1/0718/6222/3034/files/green_ring.png?v=1759292355" style="height:50px;"></img>
+            </div>
+        </div>
+         <div class="mydiv" id="photography-menu">
+          <div class="mydivheader"> PHOTOS </div>
+            <div class="ring-img-wrapper">
+              <img src="https://cdn.shopify.com/s/files/1/0718/6222/3034/files/green_ring.png?v=1759292355" style="height:50px;"></img>
+            </div>
+        </div>
+         <div class="mydiv" id="music-menu">
+          <div class="mydivheader"> MUSIC </div>
+            <div class="ring-img-wrapper">
+              <img src="https://cdn.shopify.com/s/files/1/0718/6222/3034/files/green_ring.png?v=1759292355" style="height:50px;"></img>
+            </div>
+        </div>
+    </div>
+    <!-- <script type="module" src="/src/main.html"></script> -->
+  </body>
+  
+  <script>
+    function showMenu(event, menuType) {
+      event.preventDefault();
+      // alert("Function was called! The link will not be followed.");
+      var M = document.getElementById(menuType + "-menu");
+      M.style.display = "block";
+    }
+  </script>
 
-<script>
+  <script>
         var offset = 5;
         var mydivs = document.getElementsByClassName("mydiv");
         for (var i = 0; i < mydivs.length; i++) {
@@ -73,7 +90,6 @@
           }
   
           function dragMouseDown(e) {
-            console.log("Obama is ");
             e = e || window.event;
             e.preventDefault();
          
@@ -85,7 +101,6 @@
           }
   
           function elementDrag(e) {
-            console.log("Obama is 2");
             e = e || window.event;
             e.preventDefault();
            
@@ -131,8 +146,8 @@
           });
         
           TestButton.addEventListener("click", function () {
-  coordsSpan.innerHTML =
-  "Top1 =" + mydivs[0].offsetTop + "px Left1 = " + mydivs[0].offsetLeft +
+            coordsSpan.innerHTML =
+             "Top1 =" + mydivs[0].offsetTop + "px Left1 = " + mydivs[0].offsetLeft +
               "px" +
               "&nbsp|&nbsp" +
               "Top2 =" +
@@ -140,15 +155,25 @@
               "px Left2 = " +
               mydivs[1].offsetLeft +
               "px" +
-              "&nbsp|&nbsp";
+              "&nbsp|&nbsp" +
+              "Top3 =" +
+              mydivs[2].offsetTop +
+              "px Left3 = " +
+              mydivs[2].offsetLeft +
+              "px" +
+              "&nbsp|&nbsp" +
+              "Top4 =" +
+              mydivs[3].offsetTop +
+              "px Left4 = " +
+              mydivs[3].offsetLeft +
+              "px";
           });
         });
       </script>
 
   <script>
-$(document).ready(function(){
-    $("#nav-placeholder").load("nav.html");
-});
+      $(document).ready(function(){
+          $("#nav-placeholder").load("nav.html");
+      });
   </script>
-  </body>
 </html>
